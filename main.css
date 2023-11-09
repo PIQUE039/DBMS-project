@@ -1,0 +1,125 @@
+body{
+   margin: 0;
+   padding: 0;
+   font-family: 'Roboto', sans-serif;
+   box-sizing: content-box;
+   background-image: url("/img/desktop_icc_banner.png");
+   background-repeat: no-repeat;
+   background-size: 1520px;
+   background-position-y:551px;
+   box-sizing: border-box;
+}
+a{
+   margin: 0;
+   color:black;
+   text-decoration:none;
+}
+p{
+   margin: 0;
+   padding: 0;
+}
+
+.header{
+   display:flex;
+   height: 70px;
+   margin: 15px 0 8px 0;
+   
+}
+
+.container{
+   display: flex;
+   flex-basis: 100%;
+   align-items: center;
+   justify-content: space-around;
+}
+
+.img{
+   margin: 0 127px;
+}
+.img:hover{
+   cursor:pointer;
+   
+}
+
+.ha{
+   margin-right:49px;
+   font-size: 19px;
+   transition: 0.25s all ease-in-out;
+   
+}
+.ha:hover{
+   padding: 15px;
+   border-radius: 30px;
+   font-size:23px;
+   background-color:rgb(15,134,203);
+   box-shadow: 2px 2px 2px black;
+   color:white;
+}
+
+.lr{
+   text-decoration: none;
+   padding: 12px;
+   margin-left: 8px;
+   font-size: 22px;
+   border: none;
+   background-color: white;
+   border-radius: 22px;
+   transition: 0.25s all ease-in-out;
+}
+.lr:hover{
+   cursor: pointer;
+   background-color: rgb(0,130,199);
+   box-shadow: 2px 2px 2px black;
+   padding: 15px;
+   font-size:26px;
+   color:white;
+}
+
+.main-page-text{
+   position:relative;
+   width:1520px;
+   height: 693px;
+}
+
+.background-img-two-main{
+   position: relative;
+   left: 10px;
+   top: 9px;
+   width: 619px;
+}
+
+.entry-text{
+   position: absolute;
+   font-size: 31px;
+   font-weight: 600;
+   left: 22%;
+   top:25%;
+}
+#second-line{
+   top: 31%;
+   left: 29%;
+}
+
+.booking{
+   position: absolute;
+   border-color: rgb(0, 130, 199);
+   background-color: white;
+   padding: 16px;
+   left: 43%;
+   top: 42%;
+   border-radius: 35px;
+   font-size: 18px;
+   transition: all 0.25s ease-in-out 0s;
+}
+.booking:hover{
+   cursor:pointer;
+   color:white;
+   background-color:rgb(0,130,199);
+   box-shadow: 2px 2px 2px black;
+}
+.booking:active{
+   color:black;
+   background-color:white;
+   border-color: rgb(0, 130, 199);
+   transition:0s;
+}
