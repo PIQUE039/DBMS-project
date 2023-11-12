@@ -1,3 +1,8 @@
+html{
+   scroll-behavior:smooth;
+   scroll-padding-top: 8rem;
+}
+
 body{
    margin: 0;
    padding: 0;
@@ -8,11 +13,16 @@ body{
    background-size: 1520px;
    background-position-y:551px;
    box-sizing: border-box;
+   height:2000px;
 }
 a{
    margin: 0;
    color:black;
    text-decoration:none;
+}
+h2{
+   margin:0;
+   padding:0;
 }
 p{
    margin: 0;
@@ -23,7 +33,6 @@ p{
    display:flex;
    height: 70px;
    margin: 15px 0 8px 0;
-   
 }
 
 .container{
@@ -38,14 +47,12 @@ p{
 }
 .img:hover{
    cursor:pointer;
-   
 }
 
 .ha{
    margin-right:49px;
    font-size: 19px;
    transition: 0.25s all ease-in-out;
-   
 }
 .ha:hover{
    padding: 15px;
@@ -122,4 +129,21 @@ p{
    background-color:white;
    border-color: rgb(0, 130, 199);
    transition:0s;
+}
+
+.about_us{
+   background-color:rgb(103, 223, 103);
+   display:flex;
+   justify-content:center;
+   margin-top:20px;
+}
+.au_container{
+   background-color:lightpink;
+   display:flex;
+   flex-direction:column;
+   width:75%;
+   align-items:center;
+}
+.au_discription{
+   word-spacing:3px;
 }
