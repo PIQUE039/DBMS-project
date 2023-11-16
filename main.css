@@ -103,8 +103,8 @@ p{
 .login_div{
    display:none;
    background-color: #b3b3b3;
-   width: 617px;
-   height: 607px;
+   width: 288px;
+   height: 347px;
    top: 50%;
    left: 50%;
    transform: translate(-50%,-50%);
@@ -112,6 +112,21 @@ p{
    z-index: 1;
    border: 2px solid black;
    border-radius: 20px;
+}
+
+.l_header{
+   color: rgb(0,130,199);
+   font-size: 33px;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   text-decoration: underline;
+}
+
+.l_form{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
 }
 
 .background-img-two-main{
