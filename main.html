@@ -11,7 +11,7 @@
 </head>
 <body>
    <div class="header">
-      <img src="/img/Train_logo.png" alt="Error" class="img">
+      <img src="img/Train_logo.png" alt="Error" class="img">
       <!-- Nav Bar -->
       <div class="container">
          <div class="mid">
@@ -32,16 +32,16 @@
       <!-- Login page -->
       <div class="login_div" id="loginpop">
          <div class="l_header"><p>Login</p></div>
-            <form class="l_form" action="" method="POST">
+            <form class="l_form" action="php_scripts/login.php" method="POST">
                <label class="l_text" for="">Username</label>
-               <input class="l_input" id="l_name" type="text" placeholder="Username">
+               <input class="l_input" id="l_name" name = "l_name" type="text" placeholder="Username">
                <label class="l_text" for="">Password</label>
-               <input class="l_input" id="l_password" type="password" placeholder="Password">
+               <input class="l_input" id="l_password" name = "l_password" type="password" placeholder="Password">
                <button class="booking" id="l_submit">SUBMIT</button>
             </form>
       </div>
       <!-- Welcome text -->
-      <img src="/img/indian-flag-paint.jpg" alt="Error" class="background-img-two-main">
+      <img src="img/indian-flag-paint.jpg" alt="Error" class="background-img-two-main">
       <p class="entry-text">Welcome aboard to your hassle-free ticketing journey with us,<br></p>
       <p class="entry-text" id="second-line">Where every destination begins with a click!</p>
       <a href="#booking"><button class="booking">BOOK A TRAIN!</button></a>
