@@ -30,20 +30,27 @@ p{
 }
 
 .header{
-   display:flex;
+   display: flex;
    height: 70px;
    margin: 15px 0 8px 0;
+   align-items: center;
+}
+.mid{
+   flex: 4;
+   text-align: center;
+}
+.right{
+   flex: 1;
+   margin: 10px 54px 0 0;
 }
 
-.container{
-   display: flex;
-   flex-basis: 100%;
-   align-items: center;
-   justify-content: space-around;
+.imgdiv{
+   flex:1;
 }
 
 .img{
    margin: 0 127px;
+   height: 68px;
 }
 .img:hover{
    cursor:pointer;
