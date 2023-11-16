@@ -99,6 +99,14 @@ p{
    width:1520px;
    height: 693px;
 }
+#ontop{
+   display: none;
+   z-index: 1;
+   background-color: rgb(0 0 0 / 77%);
+   height: 100vh;
+   width: 100vw;
+   position: relative;
+}
 
 .login_div{
    display:none;
