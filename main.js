@@ -10,3 +10,14 @@ function popup(){
       blur.style.display='none'
    }
 }
+
+let mybutton=document.getElementById('up')
+window.onscroll = function(){scroll()}
+function scroll(){
+   if(document.documentElement.scrollTop > 80){
+      mybutton.style.display = 'block'
+   }
+   else{
+      mybutton.style.display='none'
+   }
+}
