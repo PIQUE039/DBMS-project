@@ -35,11 +35,14 @@ p{
    width: 40px;
    height: 40px;
    background-color: black;
-   top: 91%;
+   top: 94%;
    left: 96.9%;
    border-radius: 50%;
    z-index: 1;
    position: fixed;
+}
+#up:hover{
+   cursor:pointer;
 }
 
 .header{
@@ -123,7 +126,7 @@ p{
    display: none;
    z-index: 1;
    background-color: rgb(0 0 0 / 77%);
-   height: 100vh;
+   height: 100%;
    width: 100vw;
    position: relative;
 }
