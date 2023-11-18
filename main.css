@@ -30,17 +30,6 @@ p{
    padding: 0;
 }
 
-#up{
-   display: none;
-   width: 40px;
-   height: 40px;
-   background-color: black;
-   top: 94%;
-   left: 96.9%;
-   border-radius: 50%;
-   z-index: 1;
-   position: fixed;
-}
 #up:hover{
    cursor:pointer;
 }
@@ -280,4 +269,23 @@ p{
 }
 .au_discription{
    word-spacing:3px;
+}
+
+#up{
+   display: none;
+   width: 40px;
+   height: 40px;
+   top: 94%;
+   left: 96.9%;
+   border-radius: 50%;
+   z-index: 1;
+   position: fixed;
+}
+#up img{
+   width: 40px;
+   border-radius: 50%;
+}
+#up img:hover{
+   box-shadow: 0px 0px 9px 0px black;
+   transition: 0.2s;
 }
