@@ -1,6 +1,7 @@
 function popup(){
    let pop=document.getElementById('loginpop')
    let blur=document.getElementById('ontop')
+   let b=document.body
    if(pop.style.display =='none'){
       pop.style.display ='block'
       blur.style.display='block'
