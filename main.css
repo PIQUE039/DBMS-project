@@ -1,6 +1,6 @@
 html{
    scroll-behavior:smooth;
-   scroll-padding-top: 8rem;
+   scroll-padding-top: 5rem;
 }
 
 body{
@@ -160,15 +160,7 @@ p{
    width: 82%;
    margin-bottom: 14px;
 }
-/* .l_submit{
-   position: relative;
-   left: 35%;
-   margin: 55px 0 0 0;
-   font-size: 24px;
-   font-weight: bold;
-   padding: 15px;
-   border-radius: 48px;
-} */
+
 #l_submit{
    left: 29%;
    top: 78%;
@@ -231,10 +223,9 @@ p{
 
 .info_site{
    width: 99vw;
-   margin: 10px 0 0 0;
+   margin: 55px 0 93px 0;
 }
 .is_title{
-   /* color: rgb(0,130,199); */
    text-align: center;
    font-size: 32px;
    margin: 15px 0 ;
@@ -272,7 +263,6 @@ p{
    background-color:rgb(103, 223, 103);
    display:flex;
    justify-content:center;
-   margin-top:20px;
 }
 .au_container{
    background-color:lightpink;
