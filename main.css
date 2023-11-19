@@ -25,6 +25,10 @@ h2{
    margin:0;
    padding:0;
 }
+h3{
+   margin: 0;
+   padding: 0;
+}
 p{
    margin: 0;
    padding: 0;
@@ -230,7 +234,7 @@ p{
    margin: 10px 0 0 0;
 }
 .is_title{
-   color: rgb(0,130,199);
+   /* color: rgb(0,130,199); */
    text-align: center;
    font-size: 32px;
    margin: 15px 0 ;
@@ -242,16 +246,27 @@ p{
 .is_div{
    display: flex;
    margin: 6px;
-   border: 2px solid cyan;
+   /* border: 2px solid cyan; */
    width: 474px;
    height: 100px;
 }
 .is_img{
    flex: 0.31;
-   border: 2px dotted cyan;
+   /* border: 2px dotted cyan; */
 }
 .is_info{
    flex: auto;
+}
+.info_site img{
+   width: 65px;
+   margin: 17px 11px 0 10px;
+}
+.info_site h3{
+   margin: 15px 0 0 6px;
+}
+.info_site p{
+   margin: 7px 0 0 6px;
+   color: rgb(127, 127, 127);
 }
 
 .about_us{
@@ -275,8 +290,8 @@ p{
    display: none;
    width: 40px;
    height: 40px;
-   top: 94%;
-   left: 96.9%;
+   top: 92%;
+   left: 96%;
    border-radius: 50%;
    z-index: 1;
    position: fixed;
