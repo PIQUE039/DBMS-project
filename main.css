@@ -241,18 +241,17 @@ p{
 }
 .is_row{
    display: flex;
-   justify-content: center;
+   margin: 0 16% 0px 16%;
+   justify-content: space-around;
 }
 .is_div{
    display: flex;
    margin: 6px;
-   /* border: 2px solid cyan; */
    width: 474px;
    height: 100px;
 }
 .is_img{
    flex: 0.31;
-   /* border: 2px dotted cyan; */
 }
 .is_info{
    flex: auto;
