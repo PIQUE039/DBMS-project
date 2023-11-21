@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       
   if($count == 1) {
     session_start();
-    header('Location: booking.html');
+    header('Location: booking.php');
   }
   else {
     echo "Your Login Name or Password is invalid";}  
