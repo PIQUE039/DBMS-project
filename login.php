@@ -13,7 +13,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   // If result matched $myusername and $mypassword, table row must be 1 row
       
   if($count == 1) {
-    echo "Connected successfully !";
+    session_start();
+    header('Location: booking.php');
   }
   else {
     echo "Your Login Name or Password is invalid";}  
