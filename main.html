@@ -31,10 +31,14 @@
    </div>
 </div>
 <div class="main-page-text">
-   
    <!-- Login page -->
    <div class="login_div" id="loginpop">
-      <div class="l_header"><p>Login</p></div>
+      <div class="l_header">
+         <!-- Close box -->
+         <img class="cross-x" id="close-x" onclick="lrclose()" src="/img/cross-x-removebg-preview.png" alt="Error">
+         
+         <p style="margin-top: 24px;">Login</p>
+      </div>
       <form class="l_form" action="login.php" method="POST">
          <label class="l_text" for="">Username</label>
          <input class="l_input" id="l_name" name = "l_name" type="text" placeholder="Username">
@@ -51,7 +55,7 @@
          <input class="r_input" id="r_name" name = "r_name" type="text" placeholder="Username">
          <label class="r_text" for="">Password</label>
          <input class="r_input" id="r_password" name = "r_password" type="password" placeholder="Password">
-         <!-- <button class="booking" id="r_submit">Register</button> -->
+         <button class="booking" id="r_submit">Register</button>
       </form>
    </div>
       <!-- Welcome text -->
@@ -60,8 +64,10 @@
       <p class="entry-text" id="second-line">Where every destination begins with a click!</p>
       <!-- Booking Button -->
       <!-- <a href="booking.html"><button class="booking">BOOK A TRAIN!</button></a> -->
-      <a href="booking.html"><button class="booking" id="login" >Login</button></a>
-      <a href="booking.html"><button class="booking" id="register" >Register</button></a>
+
+      <!-- Login and Register button -->
+      <button class="booking" id="login" href="#loginpop" onclick="popup()">Login</button>
+      <button class="booking" id="register" href="registerpop" onclick="r_popup()">Register</button>
    </div>
    <!-- Website Information in short -->
    <div class="info_site">
