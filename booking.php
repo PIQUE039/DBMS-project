@@ -16,24 +16,6 @@
    </style>
 </head>
 <body>
-   <?php
-   include ("base.php");
-   //Getting login credentials from form
-   $sql = "SELECT * FROM user_login";
-   $result = mysqli_query($conn, $sql);
-   if(mysqli_num_rows($result) > 0)
-       {
-          while($row = mysqli_fetch_assoc($result)){
-              echo "Username : " . $row["uname"]. " - Password : " . $row["pword"]. " Email: ". $row["email"]. " Phone Number : ". $row["pno"] . "<br>";
-          }
-       }
-       else
-       {
-           echo "0 results";
-       }
-       // closing connection
-       mysqli_close($conn);
-   ?>
    <div class="header" id="head">
       <div class="imgdiv">
          <img src="img/Train_logo.png" alt="Error" class="img">
@@ -52,5 +34,49 @@
    </div>
    <img id="up" src="img/up-arrow.png" alt="Error">
    <script src="main.js"></script>
+   <title>Database Records</title>
+    <style>
+        table{
+            width: 70%;
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        table, tr, th, td{
+            border: 1px solid #d4d4d4;
+            border-collapse: collapse;
+            padding: 12px;
+        }
+        th, td{
+            text-align: left;
+            vertical-align: top;
+        }
+        tr:nth-child(even){
+            background-color: #e7e9eb;
+        }
+    </style>
+   <?php
+   include ("base.php");
+   //Getting login credentials from form
+   $sql = "SELECT * FROM user_login";
+   $result = mysqli_query($conn, $sql);
+   if(mysqli_num_rows($result) > 0)
+   {
+      echo '<table> <tr> <th> Name </th> <th> Password </th> <th> Email </th> <th> Phone Number </th> </tr>';
+      while($row = mysqli_fetch_assoc($result)){
+      // to output mysql data in HTML table format
+         echo '<tr > <td>' . $row["uname"] . '</td>
+         <td>' . $row["pword"] . '</td>
+         <td> ' . $row["email"] . '</td>
+         <td>' . $row["pno"] . '</td> </tr>';
+      }
+      echo '</table>';
+   }
+   else
+   {
+      echo "0 results";
+   }
+   // closing connection
+   mysqli_close($conn);
+   ?>
 </body>
 </html>  
