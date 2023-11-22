@@ -125,6 +125,14 @@ p{
    position: fixed;
    top: 0;
 }
+#login{
+   left: 41%;
+   width: 100px;
+}
+#register{
+   left: 49%;
+   width: 100px;
+}
 
 .login_div{
    display:none;
@@ -147,7 +155,16 @@ p{
    display: flex;
    justify-content: center;
    text-decoration: underline;
-   margin-top: 23px;
+   /* margin-top: 23px; */
+}
+.cross-x{
+   position: relative;
+   height: 16px;
+   top: 9px;
+   left: 59%;
+}
+.cross-x:hover{
+   cursor: pointer;
 }
 
 .l_text{
