@@ -57,17 +57,20 @@
    <?php
    include ("base.php");
    //Getting login credentials from form
-   $sql = "SELECT * FROM user_login";
+   $sql = "SELECT * FROM trains";
    $result = mysqli_query($conn, $sql);
    if(mysqli_num_rows($result) > 0)
    {
-      echo '<table> <tr> <th> Name </th> <th> Password </th> <th> Email </th> <th> Phone Number </th> </tr>';
+      echo '<table> <tr> <th> Train Number </th> <th> Location </th> <th> Destination </th> <th> Seat Available </th> </tr> Time of Depature </th> </tr> Time of Arrival </th> </tr>';
       while($row = mysqli_fetch_assoc($result)){
       // to output mysql data in HTML table format
-         echo '<tr > <td>' . $row["uname"] . '</td>
-         <td>' . $row["pword"] . '</td>
-         <td> ' . $row["email"] . '</td>
-         <td>' . $row["pno"] . '</td> </tr>';
+         echo '<tr > <td>' . $row["t_no"] . '</td>
+         <td>' . $row["from_location"] . '</td>
+         <td> ' . $row["to_location"] . '</td>
+         <td>' . $row["seat_available"] . '</td> 
+         <tr>' . $row["time_of_depature"] . '</td>
+         <tr>' . $row["time_of_arrival"] . '</td>;
+         
       }
       echo '</table>';
    }
