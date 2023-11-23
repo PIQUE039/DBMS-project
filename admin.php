@@ -10,15 +10,13 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Home page</title>
    <style>
-      body{
-         background-image: none;
-      }
       table{
             width: 70%;
             margin: auto;
             font-family: Arial, Helvetica, sans-serif;
         }
         table, tr, th, td{
+            margin-top:4%;
             border: 1px solid #d4d4d4;
             border-collapse: collapse;
             padding: 12px;
@@ -35,12 +33,17 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background-image:none;
+            height:98vh;
         }
         header {
-            background-color: #333;
+            background-color: rgb(15,134,203);
             color: #fff;
             text-align: center;
             padding: 1em 0;
+        }
+        h2{
+            margin-top:4%;
         }
         main {
             padding: 20px;
@@ -61,7 +64,7 @@
             margin-top: 5px;
         }
         button {
-            background-color: #333;
+            background-color: rgb(15,134,203);
             color: #fff;
             padding: 10px;
             border: none;
@@ -72,7 +75,7 @@
             background-color: #555;
         }
         footer {
-            background-color: #333;
+            background-color: rgb(15,134,203);
             color: #fff;
             text-align: center;
             padding: 1em 0;
@@ -110,7 +113,7 @@
             <a class="ha" href="#help">Help</a>
          </div>
          <div class="right">
-            
+            <form action="logout.php" method = "POST"><button class="" id="" >Logout</button></form>
          </div>
    </div>
    <img id="up" src="img/up-arrow.png" alt="Error">
@@ -120,6 +123,7 @@
         <h1>Trains</h1>
     </header>
     <?php
+    error_reporting(0);
    include ("base.php");
    $sql = "SELECT * FROM trains";
    $result = mysqli_query($conn, $sql);
@@ -171,7 +175,14 @@
                 <label for="from">Enter Train Number :</label>
                 <input type="text" id="t_number" name="t_number" required>
                 <label for="from">Enter Column to Change :</label>
-                <input type="text" id="t_command" name="t_command" required>
+                <select id="class" name="t_command" required>
+                    <option name="t_command">t_no</option>
+                    <option name="t_command">from_location</option>
+                    <option name="t_command">to_location</option>
+                    <option name="t_command">seat_available</option>
+                    <option name="t_command">time_of_depature</option>
+                    <option name="t_command">time_of_arrival</option>
+                    </select>
                 <label for="from">Enter New Value :</label>
                 <input type="text" id="t_change" name="t_change" required>
                 </select>
@@ -223,7 +234,7 @@
    ?> 
     <main>
             <section id="booking-form">
-            <h2>Add a Train : </h2>
+            <h2>Add a User : </h2>
             <form action="add_user.php" method="POST">
                 <label for="from">Enter Username :</label>
                 <input type="text" id="u_name" name="u_name" required>
@@ -245,7 +256,14 @@
                 <label for="from">Enter Username :</label>
                 <input type="text" id="u_name" name="u_name" required>
                 <label for="from">Enter Column to Change :</label>
-                <input type="text" id="u_command" name="u_command" required>
+                <!-- <input type="text" id="u_command" name="u_command" required> -->
+                <select id="class" name="u_command" required>
+                    <option name="u_command">pno</option>
+                    <option name="u_command">email</option>
+                    <option name="u_command">pword</option>
+                    <option name="u_command">uname</option>
+                    </select>
+                <!-- <input type="text" id="t_command" name="t_command" required> -->
                 <label for="from">Enter New Value :</label>
                 <input type="text" id="u_change" name="u_change" required>
                 </select>
@@ -268,7 +286,7 @@
     </main>
     <!--------------------------------------TICKETS------------------------------------------------------------->
     <header>
-        <h1>Users</h1>
+        <h1>Tickets</h1>
     </header>
     <?php
     include ("base.php");
@@ -278,13 +296,11 @@
    
    if(mysqli_num_rows($result) > 0)
    {
-      echo '<table> <tr> <th> Train Number </th> <th> Username </th> <th> Source </th> <th> Destination </th> </tr>';
+      echo '<table> <tr> <th> Train Number </th> <th> Username </th> </tr>';
       while($row = mysqli_fetch_assoc($result)){
       // to output mysql data in HTML table format
          echo '<tr > <td>' . $row["t_no"] . '</td>
-         <td>' . $row["u_name"] . '</td>
-         <td> ' . $row["from_location"] . '</td>
-         <td>' . $row["to_location"] . '</tr>';
+         <td>' . $row["u_name"] .'</tr>';
       }
       echo '</table>';
    }
@@ -314,11 +330,17 @@
             <form action="update_ticket.php" method="POST">
                 <label for="from">Enter Username :</label>
                 <input type="text" id="t_name" name="t_name" required>
-                <label for="from">Enter Column to Change :</label>
-                <input type="text" id="t_command" name="t_command" required>
+                <label for="dropdown">Enter Column to Change :</label>
+
+
+                <select id="class" name="t_command" required>
+                    <option name="t_command">t_no</option>
+                    <!-- <option name="t_command">u_name</option> -->
+                    </select>
+                <!-- <input type="text" id="t_command" name="t_command" required> -->
                 <label for="from">Enter New Value :</label>
-                <input type="text" id="t_change" name="u_change" required>
-                </select>
+                <input type="text" id="t_change" name="t_change" required>
+                
                <button type="submit">Edit</button>
             </form>
         </section>
@@ -336,9 +358,9 @@
         <div id="bookingDetails" style="display:none;">
     </div>
     </main>
-    <footer>
+    <!-- <footer>
         <p>&copy; 2023 Train Booking</p>
-    </footer>
+    </footer> -->
     <script src="main.js"></script>
 </body>
 </html>  

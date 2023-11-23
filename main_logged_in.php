@@ -8,10 +8,27 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Home page</title>
+   <style>
+   button{
+      position: relative;
+      left: 42%;
+      margin-top: 19%;
+      border-color: rgb(0, 130, 199);
+      background-color: white;
+      padding: 16px;
+      border-radius: 35px;
+      font-size: 18px;
+      transition: all 0.25s ease-in-out 0s;
+   }
+   button:hover{
+      color:white;
+      background-color:rgb(0,130,199);
+      cursor:pointer;
+   }
+   </style>
 </head>
 <body>
-<form action="profile.php">
-   <button type="submit">Click to go back to the Home Page !</button></form> <!--CLICK ME TO GO TO TICKET -->
+
    <div id="ontop"></div>
    <div class="header" id="head">
       <div class="imgdiv">
@@ -33,6 +50,8 @@
    </div>
 </div>
 <div class="main-page-text">
+<form action="profile.php">
+   <button  id="final_button" type="submit">Click to check Profile !</button></form> <!--CLICK ME TO GO TO TICKET -->
    <!-- Login page -->
    <div class="login_div" id="loginpop">
       <div class="l_header">
@@ -64,8 +83,8 @@
       <p class="entry-text" id="second-line">Where every destination begins with a click!</p>
       <!-- Booking Button -->
       <!-- <a href="booking.html"><button class="booking">BOOK A TRAIN!</button></a> -->
-      <button class="booking" id="login" href="#loginpop" onclick="popup()">Login</button>
-      <button class="booking" id="register" href="registerpop" onclick="r_popup()">Register</button>
+      <!-- <button class="booking" id="login" href="#loginpop" onclick="popup()">Login</button>
+      <button class="booking" id="register" href="registerpop" onclick="r_popup()">Register</button> -->
    </div>
    <!-- Website Information in short -->
    <div class="info_site">

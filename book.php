@@ -23,7 +23,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
   }
   else{
-    echo 'Train does not exist';
+    echo("<script>alert('No Train Found !')</script>");
+    echo("<script>window.location = 'booking.php';</script>");
   }
 }
 ?>

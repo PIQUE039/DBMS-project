@@ -10,9 +10,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Home page</title>
    <style>
-      body{
-         background-image: none;
-      }
       table{
             width: 70%;
             margin: auto;
@@ -32,13 +29,20 @@
             background-color: #e7e9eb;
         }
 body {
+    background-image:none;
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+p{
+    text-align: center;
+    font-size: 23px;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #333;
+    background-color: rgb(15,134,203);
     color: #fff;
     text-align: center;
     padding: 1em 0;
@@ -68,12 +72,16 @@ input, select {
 }
 
 button {
-    background-color: #333;
+    background-color: rgb(15,134,203);
     color: #fff;
     padding: 10px;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 63px;
+    width: 30vw;
+    border-radius: 16px;
+    align-self: center;
+    font-size: 15px;
 }
 
 button:hover {
@@ -81,7 +89,7 @@ button:hover {
 }
 
 footer {
-    background-color: #333;
+    background-color: rgb(15,134,203);
     color: #fff;
     text-align: center;
     padding: 1em 0;

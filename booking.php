@@ -11,6 +11,7 @@
    <title>Home page</title>
    <style>
       body{
+        height: 98vh;
          background-image: none;
       }
       table{
@@ -38,7 +39,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: rgb(15,134,203);
     color: #fff;
     text-align: center;
     padding: 1em 0;
@@ -68,7 +69,7 @@ input, select {
 }
 
 button {
-    background-color: #333;
+    background-color: rgb(15,134,203);
     color: #fff;
     padding: 10px;
     border: none;
@@ -81,7 +82,7 @@ button:hover {
 }
 
 footer {
-    background-color: #333;
+    background-color: rgb(15,134,203);
     color: #fff;
     text-align: center;
     padding: 1em 0;

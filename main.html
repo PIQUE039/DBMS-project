@@ -34,14 +34,14 @@
    <!-- Login page -->
    <div class="login_div" id="loginpop">
       <div class="l_header">
-         <img class="cross-x" src="img/cross-x-removebg-preview.png" alt="Error">
+         <img class="cross-x" id="close-x" onclick="close()" src="img/cross-x-removebg-preview.png" alt="Error">
          <p style="margin-top: 24px;">Login</p>
       </div>
       <form class="l_form" action="login.php" method="POST">
          <label class="l_text" for="">Username</label>
-         <input class="l_input" id="l_name" name = "l_name" type="text" placeholder="Username">
+         <input class="l_input" id="l_name" name = "l_name" type="text" placeholder="Username" required>
          <label class="l_text" for="">Password</label>
-         <input class="l_input" id="l_password" name = "l_password" type="password" placeholder="Password">
+         <input class="l_input" id="l_password" name = "l_password" type="password" placeholder="Password" required>
          <button class="booking" id="l_submit">SUBMIT</button>
       </form>
    </div>
@@ -50,10 +50,25 @@
       <div class="r_header"><p>Register</p></div>
       <form class="r_form" action="register.php" method="POST">
          <label class="r_text" for="">Username</label>
-         <input class="r_input" id="r_name" name = "r_name" type="text" placeholder="Username">
+         <input class="r_input" id="r_name" name = "r_name" type="text" placeholder="Username" required>
          <label class="r_text" for="">Password</label>
-         <input class="r_input" id="r_password" name = "r_password" type="password" placeholder="Password">
+         <input class="r_input" id="r_password" name = "r_password" type="password" placeholder="Password" required>
+         <label class="r_text" for="">Email</label>
+         <input class="r_input" type="email" id="r_email" name="r_email" placeholder="Email" required>
+         <label class="r_text" for="">Phone no</label>
+         <input class="r_input" type="" id="r_pno" name="r_pno" placeholder="Phone number" required>
          <button class="booking" id="r_submit">Register</button>
+      </form>
+   </div>
+   <!-- Admin page -->
+   <div class="admin_div" id="adminpop">
+      <div class="a_header"><p>Admin</p></div>
+      <form class="a_form" action="admin_login.php" method="POST">
+         <label class="a_text" for="">Username</label>
+         <input class="a_input" id="a_name" name = "a_name" type="text" placeholder="Username" required>
+         <label class="a_text" for="">Password</label>
+         <input class="a_input" id="a_password" name = "a_password" type="password" placeholder="Password" required>
+         <button class="booking" id="a_submit">Done</button>
       </form>
    </div>
       <!-- Welcome text -->
@@ -64,6 +79,7 @@
       <!-- <a href="booking.html"><button class="booking">BOOK A TRAIN!</button></a> -->
       <button class="booking" id="login" href="#loginpop" onclick="popup()">Login</button>
       <button class="booking" id="register" href="registerpop" onclick="r_popup()">Register</button>
+      <button class="booking" id="admin" href="adminpop" onclick="a_popup()">Admin</button>
    </div>
    <!-- Website Information in short -->
    <div class="info_site">

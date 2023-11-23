@@ -4,7 +4,7 @@ include ("base.php");
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   $t_name = $_POST['t_number'];
   $t_command = $_POST['t_command'];
-  $t_change = $_POST['t_change'];
+  $t_change = $_POST['u_change'];
   $check = "SELECT * FROM trains WHERE t_no = '$t_name'";
   $result = mysqli_query($conn,$check);
   $count = mysqli_num_rows($result);

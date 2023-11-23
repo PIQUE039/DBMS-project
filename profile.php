@@ -10,9 +10,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Home page</title>
    <style>
-      body{
-         background-image: none;
-      }
       table{
             width: 70%;
             margin: auto;
@@ -22,7 +19,7 @@
             border: 1px solid #d4d4d4;
             border-collapse: collapse;
             padding: 12px;
-            
+            margin-top:14px;
         }
         th, td{
             text-align: left;
@@ -31,14 +28,18 @@
         tr:nth-child(even){
             background-color: #e7e9eb;
         }
+        h2{
+            margin: 2% 0px 2% 37%;
+        }
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-image:none;
 }
 
 header {
-    background-color: #333;
+    background-color: rgb(0,130,199);;
     color: #fff;
     text-align: center;
     padding: 1em 0;
@@ -68,12 +69,15 @@ input, select {
 }
 
 button {
-    background-color: #333;
+    background-color: rgb(0,130,199);
     color: #fff;
     padding: 10px;
     border: none;
     cursor: pointer;
     margin-top: 10px;
+    font-size: 20px;
+    width: 30vw;
+    align-self: center; 
 }
 
 button:hover {
@@ -81,7 +85,7 @@ button:hover {
 }
 
 footer {
-    background-color: #333;
+    background-color: rgb(0,130,199);;
     color: #fff;
     text-align: center;
     padding: 1em 0;
@@ -153,7 +157,7 @@ footer {
    }
    else
    {
-    echo "You have not booked any tickets !";
+    echo "<h2>You have not booked any tickets !</h2>";
    }
    if ($ticketbooked) {
     // Display the cancel button if a ticket has been booked
