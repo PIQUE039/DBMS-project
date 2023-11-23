@@ -144,6 +144,27 @@
    mysqli_close($conn);
    ?> 
     <main>
+    <section id="booking-form">
+            <h2>Add a Train : </h2>
+            <form action="add_train.php" method="POST">
+                <label for="from">Enter Train Number :</label>
+                <input type="text" id="t_no" name="t_no" required>
+                <label for="from">Enter Region of Depature :</label>
+                <input type="text" id="from_location" name="from_location" required>
+                <label for="from">Enter Region of Arrival :</label>
+                <input type="text" id="to_location" name="to_location" required>
+                <label for="from">Enter Seats Available :</label>
+                <input type="text" id="seat_available" name="seat_available" required>
+                <label for="from">Enter Time of Depature :</label>
+                <input type="text" id="time_of_depature" name="time_of_depature" required>
+                <label for="from">Enter Time of Arrival :</label>
+                <input type="text" id="time_of_arrival" name="time_of_arrival" required>
+                </select>
+               <button type="submit">Add</button>
+            </form>
+        </section>
+        <div id="bookingDetails" style="display:none;">
+    </div>
         <section id="booking-form">
             <h2>Edit a Train's Information : </h2>
             <form action="update_train.php" method="POST">
@@ -176,7 +197,7 @@
         <h1>Users</h1>
     </header>
     <?php
-   include ("base.php");
+    include ("base.php");
    //Getting login credentials from form
    $sql = "SELECT * FROM user_login";
    $result = mysqli_query($conn, $sql);
@@ -201,6 +222,23 @@
    mysqli_close($conn);
    ?> 
     <main>
+            <section id="booking-form">
+            <h2>Add a Train : </h2>
+            <form action="add_user.php" method="POST">
+                <label for="from">Enter Username :</label>
+                <input type="text" id="u_name" name="u_name" required>
+                <label for="from">Enter Password :</label>
+                <input type="text" id="p_word" name="p_word" required>
+                <label for="from">Enter Email :</label>
+                <input type="text" id="email" name="email" required>
+                <label for="from">Enter Phone Number :</label>
+                <input type="text" id="pno" name="pno" required>
+                </select>
+               <button type="submit">Add</button>
+            </form>
+        </section>
+        <div id="bookingDetails" style="display:none;">
+    </div>
         <section id="booking-form">
             <h2>Edit a User's Information : </h2>
             <form action="update_user.php" method="POST">
@@ -219,6 +257,76 @@
     <section id="booking-form">
             <h2>Delete a User's Record : </h2>
             <form action="delete_user.php" method="POST">
+                <label for="from">Enter Username :</label>
+                <input type="text" id="u_id" name="u_id" required>
+                </select>
+               <button type="submit">Delete</button>
+            </form>
+        </section>
+        <div id="bookingDetails" style="display:none;">
+    </div>
+    </main>
+    <!--------------------------------------TICKETS------------------------------------------------------------->
+    <header>
+        <h1>Users</h1>
+    </header>
+    <?php
+    include ("base.php");
+   //Getting login credentials from form
+   $sql = "SELECT * FROM ticket";
+   $result = mysqli_query($conn, $sql);
+   
+   if(mysqli_num_rows($result) > 0)
+   {
+      echo '<table> <tr> <th> Train Number </th> <th> Username </th> <th> Source </th> <th> Destination </th> </tr>';
+      while($row = mysqli_fetch_assoc($result)){
+      // to output mysql data in HTML table format
+         echo '<tr > <td>' . $row["t_no"] . '</td>
+         <td>' . $row["u_name"] . '</td>
+         <td> ' . $row["from_location"] . '</td>
+         <td>' . $row["to_location"] . '</tr>';
+      }
+      echo '</table>';
+   }
+   else
+   {
+      echo "0 results";
+   }
+   // closing connection
+   mysqli_close($conn);
+   ?> 
+    <main>
+    <section id="booking-form">
+            <h2>Add a Ticket : </h2>
+            <form action="add_ticket.php" method="POST">
+                <label for="from">Enter Train Number :</label>
+                <input type="text" id="t_no" name="t_no" required>
+                <label for="from">Enter Username :</label>
+                <input type="text" id="u_name" name="u_name" required>
+                </select>
+               <button type="submit">Edit</button>
+            </form>
+        </section>
+        <div id="bookingDetails" style="display:none;">
+    </div>
+        <section id="booking-form">
+            <h2>Edit a Ticket's Information : </h2>
+            <form action="update_ticket.php" method="POST">
+                <label for="from">Enter Username :</label>
+                <input type="text" id="t_name" name="t_name" required>
+                <label for="from">Enter Column to Change :</label>
+                <input type="text" id="t_command" name="t_command" required>
+                <label for="from">Enter New Value :</label>
+                <input type="text" id="t_change" name="u_change" required>
+                </select>
+               <button type="submit">Edit</button>
+            </form>
+        </section>
+        <div id="bookingDetails" style="display:none;">
+    </div>
+    <section id="booking-form">
+            <h2>Delete a Ticket : </h2>
+            <form action="delete_ticket.php" method="POST">
                 <label for="from">Enter Username :</label>
                 <input type="text" id="u_id" name="u_id" required>
                 </select>

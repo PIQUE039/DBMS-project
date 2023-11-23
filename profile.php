@@ -166,6 +166,9 @@ footer {
     echo '<button type="submit" name="cancelTicket">Click Here to Book a Ticket !</button>';
     echo '</form>';
 }
+    echo '<form action="logout.php" method="post">';
+    echo '<button type="submit" name="logout">Click Here to Logout !</button>';
+    echo '</form>';
    // closing connection
    mysqli_close($conn);
    ?> 

@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $pass = $_SESSION['pword'];
   $from = $_SESSION['source'];
   $to = $_SESSION['to'];
-  $check = "SELECT * FROM user_login WHERE uname = '$u_name' and pword = '$pass' and train_booked = ''";
+  $check = "SELECT * FROM trains WHERE t_no = '$t_name'";
   $result = mysqli_query($conn,$check);
   $count = mysqli_num_rows($result);
   if($count == 1)
@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
   }
   else{
-    echo 'You have already booked a train !';
+    echo 'Train does not exist';
   }
 }
 ?>
