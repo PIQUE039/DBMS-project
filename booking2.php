@@ -127,14 +127,47 @@ footer {
     <header>
         <h1>Train Booking</h1>
     </header>
+    <?php
+    include ("base.php");
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $source = $_POST['source'];
+    $_SESSION['source'] = $_POST['source'];
+    $to = $_POST['to'];
+    $_SESSION['to'] = $_POST['to'];
+    $sql = "SELECT * FROM trains WHERE from_location = '$source' AND to_location = '$to'";
+    $result = mysqli_query($conn, $sql);
+   
+    if(mysqli_num_rows($result) > 0)
+    {
+        echo '<table> <tr> <th> Train Number </th> <th> Location </th> <th> Destination </th> <th> Seat Available </th> <th> Time of Depature </th> <th> Time of Arrival </th> </tr>';
+        while($row = mysqli_fetch_assoc($result)){
+            echo '<tr > <td>' . $row["t_no"] . '</td>
+            <td>' . $row["from_location"] . '</td>
+            <td> ' . $row["to_location"] . '</td>
+            <td>' . $row["seat_available"] . '</td> 
+            <td>' . $row["time_of_depature"] . '</td>
+            <td>' . $row["time_of_arrival"] . '</tr>';
+        }
+        echo '</table>';
+    }
+    else
+    {
+        header('Location: booking.php');
+    }
+}
+   // closing connection
+   mysqli_close($conn);
+   ?> 
     <main>
         <section id="booking-form">
-            <h2>Enter Train Details</h2>
-            <form action="booking2.php" method="POST">
-                <label for="from">Enter Source Location</label>
-                <input type="text" id="source" name="source" required>
-                <label for="to">Enter Travel Destination</label>
-                <input type="text" id="to" name="to" required>
+            <h2>Book Your Train</h2>
+            <form action="book.php" method="POST">
+                <label for="from">Enter Train Number :</label>
+                <input type="text" id="t_number" name="t_number" required>
+
+                <!-- <label for="to">To:</label>
+                <input type="text" id="to" name="to" required> -->
+
                 <!-- <label for="date">Date:</label>
                 <input type="date" id="date" name="date" required> -->
 

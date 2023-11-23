@@ -34,3 +34,8 @@ function scroll(){
       mybutton.style.display='none'
    }
 }
+
+function downdown() {
+   // Scroll down to the bottom of the page
+   window.scrollTo(0, document.body.scrollHeight);
+}

@@ -128,28 +128,10 @@ footer {
         <h1>Train Booking</h1>
     </header>
     <main>
-        <section id="booking-form">
-            <h2>Enter Train Details</h2>
-            <form action="booking2.php" method="POST">
-                <label for="from">Enter Source Location</label>
-                <input type="text" id="source" name="source" required>
-                <label for="to">Enter Travel Destination</label>
-                <input type="text" id="to" name="to" required>
-                <!-- <label for="date">Date:</label>
-                <input type="date" id="date" name="date" required> -->
-
-                <!-- <label for="class">Class:</label>
-                <select id="class" name="class" required>
-                    <option value="economy">Economy</option>
-                    <option value="business">Business</option>
-                    <option value="first-class">First Class</option> -->
-                </select>
-               <button type="submit">Book Now</button>
-            </form>
-        </section>
-        <div id="bookingDetails" style="display:none;">
-    </div>
-    </main>
+    <p>Thank you for booking with us !</p>
+    <form action="main_logged_in.php">
+        <button type="submit">Click to go back to the Home Page !</button>
+</form>
     <footer>
         <p>&copy; 2023 Train Booking</p>
     </footer>

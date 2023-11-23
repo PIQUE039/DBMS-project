@@ -125,31 +125,52 @@ footer {
    <img id="up" src="img/up-arrow.png" alt="Error">
    <script src="main.js"></script> 
     <header>
-        <h1>Train Booking</h1>
+        <h1>Profile</h1>
     </header>
-    <main>
-        <section id="booking-form">
-            <h2>Enter Train Details</h2>
-            <form action="booking2.php" method="POST">
-                <label for="from">Enter Source Location</label>
-                <input type="text" id="source" name="source" required>
-                <label for="to">Enter Travel Destination</label>
-                <input type="text" id="to" name="to" required>
-                <!-- <label for="date">Date:</label>
-                <input type="date" id="date" name="date" required> -->
 
-                <!-- <label for="class">Class:</label>
-                <select id="class" name="class" required>
-                    <option value="economy">Economy</option>
-                    <option value="business">Business</option>
-                    <option value="first-class">First Class</option> -->
-                </select>
-               <button type="submit">Book Now</button>
-            </form>
-        </section>
-        <div id="bookingDetails" style="display:none;">
-    </div>
-    </main>
+
+
+    <?php
+   include ("base.php");
+   //Getting login credentials from form
+   $t_no = $_SESSION['t_no'];
+   $u_name = $_SESSION['uname'];
+   $sql = "SELECT * FROM ticket WHERE u_name = '$u_name'";
+   $result = mysqli_query($conn, $sql);
+   $ticketbooked = false;
+   if(mysqli_num_rows($result) > 0)
+   {
+      $ticketbooked = true;
+      echo '<table> <tr> <th> Name </th> <th> Train Number </th> <th> Location </th> <th> Destination </th> <th> ';
+      while($row = mysqli_fetch_assoc($result)){
+      // to output mysql data in HTML table format
+         echo '<tr > <td>' . $row["u_name"] . '</td>
+         <td>' . $row["t_no"] . '</td>
+         <td> ' . $row["from_location"] . '</td>
+         <td>' . $row["to_location"] . '</tr>';
+      }
+      echo '</table>';
+   }
+   else
+   {
+    echo "You have not booked any tickets !";
+   }
+   if ($ticketbooked) {
+    // Display the cancel button if a ticket has been booked
+    echo '<form action="cancel_ticket.php" method="post">';
+    echo '<button type="submit" name="cancelTicket">Cancel Ticket</button>';
+    echo '</form>';
+} else {
+    // Display a message or alternative content if no ticket has been booked
+    echo '<form action="booking.php" method="post">';
+    echo '<button type="submit" name="cancelTicket">Click Here to Book a Ticket !</button>';
+    echo '</form>';
+}
+   // closing connection
+   mysqli_close($conn);
+   ?> 
+
+
     <footer>
         <p>&copy; 2023 Train Booking</p>
     </footer>
